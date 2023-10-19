@@ -1,8 +1,26 @@
-﻿
+﻿@using MVCKutuphane.Models.Entity
+@model List<TBLKATEGORI>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2>Burası Index</h2>
-<div style="background-color:#ff6a00">Burası Index</div>
+<h2>Kategoriler</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>KATEGORİ ID</th>
+        <th>KATEGORİ ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.ID</td>
+        <td>@item.AD</td>
+        <td><a href="#" class="btn btn-danger">Sil</a></td>
+        <td><a href="#" class="btn btn-success">Güncelle</a></td>
+    </tr>
+    }
+</table>
+<a href="#" class="btn btn-primary">Yeni Kategori Ekle</a>
